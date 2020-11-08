@@ -21,10 +21,10 @@ $(call inherit-product, vendor/sony/kagura/kagura-vendor.mk)
 # Local overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay-carbon
 
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-lineage/lineage-sdk
+    $(LOCAL_PATH)/overlay-carbon/carbon-sdk
 
 # Inherit from tone-common
 $(call inherit-product, device/sony/tone-common/tone.mk)

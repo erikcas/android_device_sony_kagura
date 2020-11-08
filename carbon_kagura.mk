@@ -1,6 +1,5 @@
 #
-# Copyright (C) 2016 The CyanogenMod Project
-# Copyright (C) 2017-2019 The LineageOS Project
+# Copyright (C) 2018 The Xiaomi-SDM660 Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,23 +12,33 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
+#
+# This file sets variables that control the way modules are built
+# thorughout the system. It should not be used to conditionally
+# disable makefiles (the proper mechanism to control what gets
+# included in a build is to use PRODUCT_PACKAGES in a product
+# definition file).
 #
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from kagura device
+# Inherit device configuration
 $(call inherit-product, device/sony/kagura/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit Carbon GSM telephony parts
+$(call inherit-product, vendor/carbon/config/gsm.mk)
+
+# Inherit some common Carbon stuff.
+$(call inherit-product, vendor/carbon/config/common.mk)
 
 # Inherit gapps
 $(call inherit-product, vendor/aosp/config/gms.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_kagura
+PRODUCT_NAME := carbon_kagura
 PRODUCT_DEVICE := kagura
 PRODUCT_BRAND := Sony
 PRODUCT_MODEL := Xperia XZ

@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_kagura.mk
+    $(LOCAL_DIR)/carbon_kagura.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_kagura-user \
-    lineage_kagura-userdebug \
-    lineage_kagura-eng
+    carbon_kagura-user \
+    carbon_kagura-userdebug \
+    carbon_kagura-eng
